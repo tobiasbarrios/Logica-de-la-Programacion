@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<h1>CAlcular promedio de edad</h1>
+
+<script>
+function saltarLinea(){
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+
+}
+
+function imprimir(mensaje){
+
+    document.write(mensaje);
+    saltarLinea();
+    
+}
+
+//var edadPadre = 42;
+//var edadMama = 38;
+//var edadHijo = 15;
+//var edadHija = 12;
+
+//var totalEdad = edadPadre + edadMama + edadHijo + edadHija;
+//var promedioEdad = totalEdad / 4;
+//imprimir("El promedio de edad es de " + Math.round(promedioEdad));
+
+var numMiembros = parseInt(prompt("Ingrese la cantidad de miembros"));
+var contador = 1;
+var totalEdades = 0;
+
+while(contador <= numMiembros){
+
+    edad = parseInt(prompt("Ingrese la edad del familiar"))
+    totalEdades = totalEdades + edad;
+    contador++;
+}
+promedioEdad= totalEdades / numMiembros;
+imprimir("El promedio de edades es = " + promedioEdad);
+imprimir("Fin");
+
+// imprimir ("Este es el ejercicio");
+
+//var numeros = 0;
+
+//while(numeros <= 100){
+ //imprimir(numeros);
+ //numeros++;
+//}
+</script>

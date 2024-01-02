@@ -1,0 +1,41 @@
+<meta charset= "UTF-8">
+<h1>HOLA</h1>
+<input/>
+<button>Verificar si acerto num</button>
+<script>
+
+var secretos = [3,5,7,9,11,24];
+var etiquetita = document.querySelector("input");
+etiquetita.focus();
+
+function verificar() {
+    
+    var encontrado = false;
+    // tambien  for(var posicion = 0; posicion < 4; posicion++)
+    for(var posicion = 0; posicion < secretos.length; posicion++){ // podemos poner posicion <=3 o <4 porque el ciclo empieza desde el 0, 1 , 2 ,3
+      // el comando lengt significa que desde el array secretos me tome todos los valores con el comando length  
+        if (parseInt(etiquetita.value) == secretos[posicion]){
+     
+         alert("Acertaste!!");
+         encontrado = true;
+            break;
+         
+        }
+
+      
+    }
+    if (encontrado == false){
+    
+        alert("Fallaste!!");
+
+     } 
+
+    etiquetita.value = ""; 
+    etiquetita.focus();
+}
+
+var botoncito = document.querySelector("button");
+
+botoncito.onclick = verificar;
+
+</script>

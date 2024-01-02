@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<h1>AÑO MUNDIAL</h1>
+<script>
+function saltarLinea(){
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+
+}
+
+function imprimir(mensaje){
+
+    document.write(mensaje);
+    saltarLinea();
+}
+
+var anhoMundial = 1930; 
+var limite = parseInt(prompt("Ingrese un año para calcular"));
+
+//Condicion Loop (REPETIR)
+while (anhoMundial <= limite){
+    
+imprimir("En el año " + anhoMundial + " se festejo un mundial");
+anhoMundial = anhoMundial + 4;
+
+}
+
+imprimir("fin");
+</script>

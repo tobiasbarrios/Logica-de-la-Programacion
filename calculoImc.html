@@ -1,0 +1,83 @@
+<meta charset="UTF-8">
+<h1>Calcular IMC</h1>
+
+<script>
+
+function saltarLinea() {
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+
+}
+function imprimir(mensaje){
+    document.write(mensaje);
+    saltarLinea();
+}
+
+//function calcularImc(peso,altura,nombre){
+   // imc = peso/(altura * altura); 
+   // imprimir("El imc de " + nombre + " es " + Math.round ( imc));
+   // return(imc);
+//}
+// Este es un metodo para calcular el imc algo largo 
+
+//pesoTobias = 59;
+//alturaTobias = 1.66;
+//imcTobias = pesoTobias/(alturaTobias * alturaTobias);
+//imcTobias = calcularImc(pesoTobias, alturaTobias);
+
+//El metodo de abajo es un metodo mas corto para calcular el imc
+//imcTobias = calcularImc(60,1.66);
+//imprimir("El imc de Tobias es= " + Math.round (imcTobias));
+
+//Este metodo es mucho mas resumido (Eficiente), porque todo esta declarado en al funcion de CalcularImc
+
+//calcularImc(60,1.66, "Tobias");
+//calcularImc(70,1.75, "Felipe");
+
+// OTRO METODO PARA CALCULAR EL IMC CON RETURN Y VAR
+//function calcularImc(peso,altura){
+// imc = peso / (altura * altura); 
+// return imc;
+//}
+//var imcTobias = calcularImc(60,1.66);
+//var imcFelipe = calcularImc(70,1.70);
+//imprimir("El promedio de imc de Tobias y Felipe es = " + Math.round (imcTobias+imcFelipe)/2);
+
+// ESTE METODO ES MUCHO MAS EFICIENTE Y LIMPIO (ES MAS objetiva)
+
+function calcularImc(peso,altura){
+ return (peso / (altura * altura));
+}
+
+//imprimir("El promedio de imc de Tobias y Felipe es = " + Math.round (calcularImc(60,1.66) + calcularImc(70,1.70))/2);
+
+// Acá usamos un metodo para que el programa le pregunte al usuario el peso y altura
+
+
+nombre= prompt ("Ingrese su nombre");
+pesoInformado = prompt(nombre + ", ingrese su peso");
+alturaInformado = prompt(nombre + ", ingrese su altura");
+
+imcCalculado = calcularImc(pesoInformado, alturaInformado, nombre);
+
+imprimir(nombre + ", tu indice de IMC es = " + Math.round(imcCalculado));
+//imprimir("El imc calculado es= " + Math.round(imcCalculado));
+
+if (imcCalculado < 18.5){
+    imprimir("IMC bajo de lo recomendado");
+}
+
+if (imcCalculado >= 18.5 && imcCalculado <25){
+    imprimir("IMC dentro de lo normal");
+}
+
+if (imcCalculado >= 25 && imcCalculado <30){
+    imprimir("IMC considerado como sobrepeso");
+}
+
+if (imcCalculado >= 30){
+    imprimir("IMC considerado como obesidad");
+}
+
+</script>

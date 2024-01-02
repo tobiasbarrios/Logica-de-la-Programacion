@@ -1,0 +1,33 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "lightblue";
+    pincel.fillRect(0,0,600,400);
+
+    function exibirAlerta(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        console.log(evento);
+        alert(x+ "," + y);
+
+    }
+
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        pincel.fillStyle = "blue";
+        pincel.beginPath(); // PONER COMO COMENTARIO ESTA FUNCION Y PROBAR COMO SE UNEN LOS PUNTOS
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(x+ "," + y);
+
+    }
+
+    // pantalla.onclick = exibirAlerta; //No es necesario poner el () porque no vamos a usar el parametro
+    pantalla.onclick = dibujarCirculo;
+</script>
